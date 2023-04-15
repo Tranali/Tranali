@@ -1,0 +1,309 @@
+{% assign collection1 = collections[section.settings.collection_1] %}
+{% assign collection2 = collections[section.settings.collection_2] %}
+{% assign collection3 = collections[section.settings.collection_3] %}
+{% assign collection4 = collections[section.settings.collection_4] %}
+{% assign collection5 = collections[section.settings.collection_5] %}
+{% assign collection6 = collections[section.settings.collection_6] %}
+{% assign collection7 = collections[section.settings.collection_7] %}
+<div class="collection-list-wrapper page-width no-heading no-mobile-link">
+<h2 style="text-align:center;">{{ section.settings.title }}</h2>
+<div class="tab-wrapper">
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, '{{ section.settings.collection_1 }}')" id="defaultOpen">{{ collection1.title }}</button>
+  <button class="tablinks" onclick="openTab(event, '{{ section.settings.collection_2 }}')">{{ collection2.title }}</button>
+  <button class="tablinks" onclick="openTab(event, '{{ section.settings.collection_3 }}')">{{ collection3.title }}</button>
+  <button class="tablinks" onclick="openTab(event, '{{ section.settings.collection_4 }}')">{{ collection4.title }}</button>
+  <button class="tablinks" onclick="openTab(event, '{{ section.settings.collection_5 }}')">{{ collection5.title }}</button>
+  <button class="tablinks" onclick="openTab(event, '{{ section.settings.collection_6 }}')">{{ collection6.title }}</button>
+    <button class="tablinks" onclick="openTab(event, '{{ section.settings.collection_7 }}')">{{ collection7.title }}</button>
+
+</div>
+
+<div id="{{ section.settings.collection_1 }}" class="tabcontent">
+  <a class="more-link" href="{{ collection1.handle }}">View All</a>
+  {% for product in collection1.products limit:2 %}
+  <div class="product-card">
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.price | money }}</p>
+    <form action="/cart/add" method="post">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+      <button type="submit" class="btn">Add to Cart</button>
+    </form>
+  <img src="{{ product.featured_image | img_url: '150x150' }}" alt="{{product.featured_image.alt}}" />
+     </div>
+{% endfor %}
+</div>
+
+<div id="{{ section.settings.collection_2 }}" class="tabcontent">
+<a class="more-link" href="{{ collection2.handle }}">View All</a>
+  {% for product in collection2.products limit:2 %}
+  <div class="product-card">
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.price | money }}</p>
+    <form action="/cart/add" method="post">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+      <button type="submit" class="btn">Add to Cart</button>
+    </form>
+    <img src="{{ product.featured_image | img_url: '150x150' }}" alt="{{product.featured_image.alt}}" />
+  </div>
+{% endfor %}
+</div>
+
+<div id="{{ section.settings.collection_3 }}" class="tabcontent">
+  <a class="more-link" href="{{ collection3.handle }}">View All</a>
+  {% for product in collection3.products limit:2 %}
+  <div class="product-card">
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.price | money }}</p>
+    <form action="/cart/add" method="post">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+      <button type="submit" class="btn">Add to Cart</button>
+    </form>
+     <img src="{{ product.featured_image | img_url: '150x150' }}" alt="{{product.featured_image.alt}}" />
+  </div>
+{% endfor %}
+</div>
+  <div id="{{ section.settings.collection_4 }}" class="tabcontent">
+  <a class="more-link" href="{{ collection4.handle }}">View All</a>
+  {% for product in collection4.products limit:2 %}
+  <div class="product-card">
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.price | money }}</p>
+    <form action="/cart/add" method="post">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+      <button type="submit" class="btn">Add to Cart</button>
+    </form>
+     <img src="{{ product.featured_image | img_url: '150x150' }}" alt="{{product.featured_image.alt}}" />
+  </div>
+{% endfor %}
+</div>
+
+  <div id="{{ section.settings.collection_5 }}" class="tabcontent">
+  <a class="more-link" href="{{ collection5.handle }}">View All</a>
+  {% for product in collection5.products limit:2 %}
+  <div class="product-card">
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.price | money }}</p>
+    <form action="/cart/add" method="post">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+      <button type="submit" class="btn">Add to Cart</button>
+    </form>
+     <img src="{{ product.featured_image | img_url: '150x150' }}" alt="{{product.featured_image.alt}}" />
+  </div>
+{% endfor %}
+</div>
+  <div id="{{ section.settings.collection_6 }}" class="tabcontent">
+  <a class="more-link" href="{{ collection6.handle }}">View All</a>
+  {% for product in collection6.products limit:2 %}
+  <div class="product-card">
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.price | money }}</p>
+    <form action="/cart/add" method="post">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+      <button type="submit" class="btn">Add to Cart</button>
+    </form>
+     <img src="{{ product.featured_image | img_url: '150x150' }}" alt="{{product.featured_image.alt}}" />
+  </div>
+{% endfor %}
+</div>
+  <div id="{{ section.settings.collection_7 }}" class="tabcontent">
+  <a class="more-link" href="{{ collection7.handle }}">View All</a>
+  {% for product in collection7.products limit:2 %}
+  <div class="product-card">
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.price | money }}</p>
+    <form action="/cart/add" method="post">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+      <button type="submit" class="btn">Add to Cart</button>
+    </form>
+     <img src="{{ product.featured_image | img_url: '150x150' }}" alt="{{product.featured_image.alt}}" />
+  </div>
+{% endfor %}
+</div>
+  
+</div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Tab",
+  "tag": "section",
+  "class": "spaced-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Featured collection"
+     
+    },
+    {
+      "type": "collection",
+      "id": "collection_1",
+      "label": "t:sections.featured-collection.settings.collection.label"
+    },
+    {
+      "type": "collection",
+      "id": "collection_2",
+      "label": "t:sections.featured-collection.settings.collection.label"
+    },
+    {
+      "type": "collection",
+      "id": "collection_3",
+      "label": "t:sections.featured-collection.settings.collection.label"
+    },
+     {
+      "type": "collection",
+      "id": "collection_4",
+      "label": "t:sections.featured-collection.settings.collection.label"
+    },
+     {
+      "type": "collection",
+      "id": "collection_5",
+      "label": "t:sections.featured-collection.settings.collection.label"
+    },
+     {
+      "type": "collection",
+      "id": "collection_6",
+      "label": "t:sections.featured-collection.settings.collection.label"
+    },
+     {
+      "type": "collection",
+      "id": "collection_7",
+      "label": "t:sections.featured-collection.settings.collection.label"
+    }
+    
+  ],
+  "presets": [
+    {
+      "name": "Collection Tab"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+  
+
+<style>
+.tab {
+  float: left;
+  background-color: #f1f1f1;
+  width: 30%;
+  height: 333px;
+}
+.tab button {
+  display: block;
+    background-color: inherit;
+    color: black;
+    padding: 16px 16px;
+    width: 100%;
+    border: 1px solid #f0eaea;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab {
+    overflow-y: scroll;
+}
+.tab button:hover {
+  color: #0baba8;
+}
+
+.tab button.active {
+  color: #0baba8;
+}
+
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  width: 70%;
+  border-left: none;
+  height: 333px;
+}
+  @media (min-width:769px){
+    .tab {
+    float: left;
+    width: 33%;
+    padding: 10px;
+    height:333px;
+}
+
+.tabcontent {
+    float: left;
+    width: 66%;
+    padding: 0 10px;
+    height: 333px;
+}
+.tab-wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+    .product-card {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 333px;
+}
+    a.more-link {
+    margin-top: -3.5% !important;
+    margin-left: 54% !important;
+    position: absolute;
+    text-align: right !important;
+}
+  }
+  .product-card {
+    box-shadow: 4px 4px 8px 4px rgb(123 120 120 / 20%);
+    transition: 0.3s;
+    width: 48%;
+    margin: 4px;
+}
+  @media(max-width:768px){
+    .product-card {
+    box-shadow: 4px 4px 8px 4px rgb(123 120 120 / 20%);
+    transition: 0.3s;
+    width: 100%;
+    margin: 4px;
+      padding:10px;
+}
+    a.more-link {
+    margin: 0 0 0 80%;
+}
+    .tab{
+      width:100%
+      display:block;
+    }
+    .tabcontent {
+   display:block;
+    padding: 0px 12px;
+    width: 100%;
+    border-left: none;
+    height: 333px;
+}
+  }
+  .tabcontent img {
+    margin-left: 55%;
+    padding-top: 8%;
+}
+</style>
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
